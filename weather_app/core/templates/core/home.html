@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset = "utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather</title>
+    <style>
+        *{
+            margin: 0;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            box-sizing: border-box;
+        }
+        #main{
+            text-align: center;
+            padding-top: 50px;
+        }
+        input[type='text']{
+            width: 30%;
+            padding: 10px;
+            border: 2px solid black;
+            margin-bottom: 5px;
+            margin-top: 10px;
+        }
+        input[type='submit']{
+            width: 30%;
+            padding: 10px;
+            border: 2px solid black;
+            background: black;
+            color: white;
+            margin-top: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        .weather_data{
+            margin-top: 5px;
+            font-size: 20px;
+        }
+        .footer{
+            position:fixed;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color:aliceblue;
+            text-align: center;
+            left:0px;
+            bottom:0px;
+            height:22px;
+            width:100%;
+            background:rgb(10, 0, 0);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="main">
+    <h1>Find the Weather</h1>
+    <form method = 'GET'>
+        <label for = 'city'></label>
+        <input type = 'text' name = 'city' id = 'city' placeholder='city...'><br>
+        <input type = 'submit' value='Submit'/>
+    </form>
+    {%if weather%}
+        <div class = weather_data>
+            <h3>{{ weather.region }}</h3>
+            <h3>{{ weather.daytime }}</h3>
+            <h3>{{ weather.temp }}°C</h3>
+            <h3>{{ weather.status }}</h3>
+        </div>
+    {%endif%}
+</div>
+
+</body>
+<footer>
+    <span class = 'footer'>© 2020 Design and develop by Vo Nhu Phuc <a href="https://www.linkedin.com/in/phuc-vo-nhu-452684188/" target="_blank"> Linkedin</a>
+        <a href="https://github.com/nhuphuc1602" target="_blank"> Github</a>
+    </span>
+</footer>
+</html>
